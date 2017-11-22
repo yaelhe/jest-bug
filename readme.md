@@ -1,12 +1,15 @@
 # Jest bug
 
+## Setup
+
 `npm install`
 
-`npm run test-no-jest` succeeds, it runs the test without any test framework, just using assert.
+## Problem
 
-`npm run test` fails but it should not.
+  - `npm run test-no-jest` succeeds, it runs the test without any test framework, just using assert.
+  - `npm run test` fails but it should not.
 
-Error given by jest:
+## Error given by jest:
 
 ```
  FAIL  src/__tests__/basics.js
