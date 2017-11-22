@@ -1,0 +1,26 @@
+{
+  "ignore": ["node_modules/**"],
+  "presets": ["flow", "env", "stage-0", "react"],
+  "env": {
+    "test": {
+      "presets": ["flow", "env", "stage-0", "react"]
+    },
+    "production": {
+      "plugins": ["external-helpers"],
+      "presets": [
+        "flow",
+        [
+          "env",
+          {
+            "targets": {
+              "browsers": ["last 2 Chrome versions"]
+            },
+            "modules": false
+          }
+        ],
+        "stage-0",
+        "react"
+      ]
+    }
+  }
+}
