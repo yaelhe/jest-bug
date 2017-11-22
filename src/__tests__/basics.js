@@ -2,6 +2,8 @@
 
 import Basic from "../basics";
 
+import "babel-polyfill";
+
 test("async generator", async () => {
   const gen = Basic.asyncGen();
   const expectedResults = ["a", "b"];
