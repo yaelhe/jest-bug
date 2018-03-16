@@ -1,25 +1,40 @@
 {
-  "ignore": ["node_modules/**"],
-  "presets": ["flow", "env", "stage-0", "react"],
   "env": {
     "test": {
-      "presets": ["flow", "env", "stage-0", "react"]
+      "presets": [
+        "@babel/preset-flow",
+        [
+          "@babel/preset-env",
+          {
+            "shippedProposals": true,
+            "useBuiltIns": "usage"
+          }
+        ],
+        "@babel/preset-stage-0",
+        "@babel/preset-react"
+      ]
     },
     "production": {
-      "plugins": ["external-helpers"],
+      "plugins": [
+        "external-helpers"
+      ],
       "presets": [
         "flow",
         [
-          "env",
+          "@babel/preset-env",
           {
+            "shippedProposals": true,
+            "useBuiltIns": "usage",
             "targets": {
-              "browsers": ["last 2 Chrome versions"]
+              "browsers": [
+                "last 2 Chrome versions"
+              ]
             },
             "modules": false
           }
         ],
-        "stage-0",
-        "react"
+        "@babel/preset-stage-0",
+        "@babel/preset-react"
       ]
     }
   }
